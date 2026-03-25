@@ -1,16 +1,18 @@
 import React from 'react'
 import { FiHome, FiBook, FiUsers, FiList, FiSettings } from 'react-icons/fi'
+import { PiStudent } from "react-icons/pi";
+import { MdOutlineSubscriptions } from "react-icons/md";
 import { Link } from 'react-router-dom'
 
 const sidebarItems = [
   { id: 1, title: 'Home', path: '/', icon: FiHome },
   { id: 2, title: 'Courses', path: '/courses', icon: FiBook },
-  // { id: 3, title: 'Subscription', path: '/subscription', icon: FiUsers },
-  { id: 4, title: 'Playlists', path: '/playlists', icon: FiList },
-  // { id: 5, title: 'Settings', path: '/settings', icon: FiSettings },
+  { id: 3, title: 'Subscription', path: '/subscription', icon: MdOutlineSubscriptions },
+  { id: 4, title: 'Members', path: '/users', icon: FiUsers },
+  { id: 5, title: 'Students', path: '/students', icon: PiStudent },
 ]
 
-const Sidebar = ({ isOpen }) => {
+const DBSidebar = ({ isOpen }) => {
   return (
     <aside
       className={`bg-[#5a4a3a] text-white flex flex-col transition-all duration-300 ease-in-out shrink-0 ${
@@ -36,4 +38,4 @@ const Sidebar = ({ isOpen }) => {
   )
 }
 
-export default Sidebar
+export default DBSidebar
