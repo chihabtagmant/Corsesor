@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { NavBarMenu, searchMenu } from '../mock/data'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Outlet } from 'react-router-dom'
 import { FiSearch, FiBell, FiMenu } from 'react-icons/fi'
 import MathBackground from '../components/MathBackground'
 import Sidebar from '../components/Sidebar'
@@ -212,7 +212,7 @@ const NavBar = () => {
         <div className="flex flex-1 min-h-0">
           <Sidebar isOpen={sidebarOpen} />
           <main className="flex-1 p-6 overflow-auto">
-            {/* Main content area - placeholder for now */}
+            <Outlet />
           </main>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
@@ -8,15 +8,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/NavBar" element={<NavBar />} />
-        <Route path="/courses" element={<NavBar />} />
-        <Route path="/subscription" element={<NavBar />} />
-        <Route path="/playlists" element={<NavBar />} />
-        <Route path="/settings" element={<NavBar />} />
+        
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="courses" element={<Dashboard />} />
+          <Route path="subscription" element={<Dashboard />} />
+          <Route path="playlists" element={<Dashboard />} />
+          <Route path="settings" element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

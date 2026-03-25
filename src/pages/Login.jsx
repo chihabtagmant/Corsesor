@@ -28,7 +28,7 @@ const Login = () => {
       } catch (err) {
         // ignore storage errors for now
       }
-      navigate('/NavBar')
+      navigate('/')
     } else {
       setError('Invalid email or password for test user.')
     }
